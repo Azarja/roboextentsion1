@@ -21,11 +21,11 @@ input.onButtonPressed(Button.B, function () {
     basic.pause(1000)
     motor.servo(motor.Servos.S1, 80)
     basic.showIcon(IconNames.No)
-    basic.pause(500)
     motor.servo(motor.Servos.S1, 0)
 })
 input.onPinPressed(TouchPin.P1, function () {
     basic.showIcon(IconNames.Happy)
+    basic.pause(500)
 })
 let loop1 = 0
 loop1 = 0
