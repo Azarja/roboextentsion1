@@ -18,10 +18,14 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     motor.servo(motor.Servos.S1, 0)
     basic.showIcon(IconNames.SmallSquare)
-    motor.servo(motor.Servos.S1, 180)
+    basic.pause(1000)
+    motor.servo(motor.Servos.S1, 80)
+    basic.pause(500)
+    motor.servo(motor.Servos.S1, 0)
 })
 input.onPinPressed(TouchPin.P1, function () {
     basic.showIcon(IconNames.Happy)
 })
 let loop1 = 0
 loop1 = 0
+motor.motorStopAll()
