@@ -20,6 +20,7 @@ input.onButtonPressed(Button.B, function () {
     basic.showIcon(IconNames.SmallSquare)
     basic.pause(1000)
     motor.servo(motor.Servos.S1, 80)
+    basic.showIcon(IconNames.No)
     basic.pause(500)
     motor.servo(motor.Servos.S1, 0)
 })
