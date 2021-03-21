@@ -56,6 +56,83 @@ input.onButtonPressed(Button.B, function () {
         loop1 = 0
     }
 })
+input.onGesture(Gesture.ThreeG, function () {
+    motor.motorStop(motor.Motors.M1)
+    for (let index = 0; index < 3; index++) {
+        basic.showLeds(`
+            . . # . .
+            . . . . .
+            . . . . .
+            . . . . .
+            . . # . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . . # . .
+            . . . . .
+            . . # . .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . . # . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . # # . .
+            . . # # .
+            . . . . .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # # # .
+            . . . . .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # # # .
+            . # # # .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . # . .
+            . # # # .
+            # # # # .
+            . # # # .
+            . . . . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            . . # . .
+            . # # # .
+            # # # # #
+            . # # # .
+            . . # . .
+            `)
+        basic.pause(100)
+        basic.showLeds(`
+            # . # . #
+            . # # # .
+            # # # # #
+            . # # # .
+            # . # . #
+            `)
+        loop1 = 0
+    }
+})
 let loop1 = 0
 loop1 = 0
 motor.motorStopAll()
