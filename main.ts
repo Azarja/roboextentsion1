@@ -38,6 +38,9 @@ input.onButtonPressed(Button.B, function () {
             # # # . .
             `)
         loop1 = 2
+        for (let index = 0; index < 100; index++) {
+            music.playMelody("B - B - B - B - ", 150)
+        }
     } else if (loop1 == 1) {
         motor.motorStop(motor.Motors.M1)
         basic.pause(500)
@@ -50,10 +53,14 @@ input.onButtonPressed(Button.B, function () {
             # # # . .
             `)
         loop1 = 2
+        for (let index = 0; index < 100; index++) {
+            music.playMelody("B - B - B - B - ", 150)
+        }
     } else {
         motor.motorStop(motor.Motors.M1)
         basic.showIcon(IconNames.No)
         loop1 = 0
+        music.stopMelody(MelodyStopOptions.All)
     }
 })
 input.onGesture(Gesture.ThreeG, function () {
