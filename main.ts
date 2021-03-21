@@ -136,3 +136,8 @@ input.onGesture(Gesture.ThreeG, function () {
 let loop1 = 0
 loop1 = 0
 motor.motorStopAll()
+basic.forever(function () {
+    while (loop1 == 2) {
+        music.playMelody("B B B B - - - - ", 600)
+    }
+})
