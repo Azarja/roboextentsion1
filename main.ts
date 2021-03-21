@@ -1,6 +1,18 @@
 input.onButtonPressed(Button.A, function () {
     if (loop1 == 0) {
-        motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 113)
+        motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 200)
+        basic.showLeds(`
+            . . # # #
+            . # # # .
+            # # # . .
+            . # # # .
+            . . # # #
+            `)
+        loop1 = 1
+    } else if (loop1 == 2) {
+        motor.motorStop(motor.Motors.M1)
+        basic.pause(500)
+        motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 200)
         basic.showLeds(`
             . . # # #
             . # # # .
@@ -17,7 +29,7 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.B, function () {
     if (loop1 == 0) {
-        motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 113)
+        motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 100)
         basic.showLeds(`
             # # # . .
             . # # # #
@@ -29,7 +41,7 @@ input.onButtonPressed(Button.B, function () {
     } else if (loop1 == 1) {
         motor.motorStop(motor.Motors.M1)
         basic.pause(500)
-        motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 113)
+        motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 100)
         basic.showLeds(`
             # # # . .
             . # # # .
