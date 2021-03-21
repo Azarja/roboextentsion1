@@ -66,7 +66,7 @@ input.onGesture(Gesture.ThreeG, function () {
             . . . . .
             . . # . .
             `)
-        basic.pause(100)
+        basic.pause(10)
         basic.showLeds(`
             . . . . .
             . . # . .
@@ -74,7 +74,7 @@ input.onGesture(Gesture.ThreeG, function () {
             . . # . .
             . . . . .
             `)
-        basic.pause(100)
+        basic.pause(10)
         basic.showLeds(`
             . . . . .
             . . # . .
@@ -82,7 +82,7 @@ input.onGesture(Gesture.ThreeG, function () {
             . . . . .
             . . . . .
             `)
-        basic.pause(100)
+        basic.pause(10)
         basic.showLeds(`
             . . . . .
             . # # . .
@@ -90,7 +90,7 @@ input.onGesture(Gesture.ThreeG, function () {
             . . . . .
             . . . . .
             `)
-        basic.pause(100)
+        basic.pause(10)
         basic.showLeds(`
             . . . . .
             . # # # .
@@ -98,7 +98,7 @@ input.onGesture(Gesture.ThreeG, function () {
             . . . . .
             . . . . .
             `)
-        basic.pause(100)
+        basic.pause(10)
         basic.showLeds(`
             . . . . .
             . # # # .
@@ -106,7 +106,7 @@ input.onGesture(Gesture.ThreeG, function () {
             . # # # .
             . . . . .
             `)
-        basic.pause(100)
+        basic.pause(10)
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -114,7 +114,7 @@ input.onGesture(Gesture.ThreeG, function () {
             . # # # .
             . . . . .
             `)
-        basic.pause(100)
+        basic.pause(10)
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -122,7 +122,7 @@ input.onGesture(Gesture.ThreeG, function () {
             . # # # .
             . . # . .
             `)
-        basic.pause(100)
+        basic.pause(10)
         basic.showLeds(`
             # . # . #
             . # # # .
