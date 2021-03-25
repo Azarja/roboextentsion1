@@ -69,7 +69,7 @@ input.onButtonPressed(Button.B, function () {
             loop1 = 0
         }
     } else {
-        steer += -10
+        steer += 10
         motor.servo(motor.Servos.S1, steer)
         basic.showLeds(`
             . . # . .
@@ -170,6 +170,7 @@ let loop1 = 0
 loop1 = 0
 device = 0
 steer = 90
+motor.servo(motor.Servos.S1, steer)
 motor.motorStopAll()
 basic.forever(function () {
 	
