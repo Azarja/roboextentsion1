@@ -1,59 +1,90 @@
 input.onButtonPressed(Button.A, function () {
-    if (loop1 == 0) {
-        motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 200)
-        basic.showLeds(`
-            . . # # #
-            . # # # .
-            # # # . .
-            . # # # .
-            . . # # #
-            `)
-        loop1 = 1
-    } else if (loop1 == 2) {
-        motor.motorStop(motor.Motors.M1)
-        basic.pause(500)
-        motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 200)
-        basic.showLeds(`
-            . . # # #
-            . # # # .
-            # # # . .
-            . # # # .
-            . . # # #
-            `)
-        loop1 = 1
+    if (device == 0) {
+        if (loop1 == 0) {
+            motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 255)
+            basic.showLeds(`
+                . . # # #
+                . # # # .
+                # # # . .
+                . # # # .
+                . . # # #
+                `)
+            loop1 = 1
+        } else if (loop1 == 2) {
+            motor.motorStop(motor.Motors.M1)
+            basic.pause(500)
+            motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 255)
+            basic.showLeds(`
+                . . # # #
+                . # # # .
+                # # # . .
+                . # # # .
+                . . # # #
+                `)
+            loop1 = 1
+        } else {
+            motor.motorStop(motor.Motors.M1)
+            basic.showIcon(IconNames.No)
+            loop1 = 0
+        }
     } else {
-        motor.motorStop(motor.Motors.M1)
-        basic.showIcon(IconNames.No)
-        loop1 = 0
+        steer += -10
+        motor.servo(motor.Servos.S1, steer)
+        basic.showLeds(`
+            . . # . .
+            . # . . .
+            # . . . .
+            . # . . .
+            . . # . .
+            `)
     }
 })
 input.onButtonPressed(Button.B, function () {
-    if (loop1 == 0) {
-        motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 100)
-        basic.showLeds(`
-            # # # . .
-            . # # # #
-            . . # # #
-            . # # # .
-            # # # . .
-            `)
-        loop1 = 2
-    } else if (loop1 == 1) {
-        motor.motorStop(motor.Motors.M1)
-        basic.pause(500)
-        motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 100)
-        basic.showLeds(`
-            # # # . .
-            . # # # .
-            . . # # #
-            . # # # .
-            # # # . .
-            `)
-        loop1 = 2
+    if (device == 0) {
+        if (loop1 == 0) {
+            motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 255)
+            basic.showLeds(`
+                # # # . .
+                . # # # #
+                . . # # #
+                . # # # .
+                # # # . .
+                `)
+            loop1 = 2
+        } else if (loop1 == 1) {
+            motor.motorStop(motor.Motors.M1)
+            basic.pause(500)
+            motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 255)
+            basic.showLeds(`
+                # # # . .
+                . # # # .
+                . . # # #
+                . # # # .
+                # # # . .
+                `)
+            loop1 = 2
+        } else {
+            motor.motorStop(motor.Motors.M1)
+            basic.showIcon(IconNames.No)
+            loop1 = 0
+        }
     } else {
-        motor.motorStop(motor.Motors.M1)
-        basic.showIcon(IconNames.No)
-        loop1 = 0
+        steer += -10
+        motor.servo(motor.Servos.S1, steer)
+        basic.showLeds(`
+            . . # . .
+            . . . # .
+            . . . . #
+            . . . # .
+            . . # . .
+            `)
+    }
+})
+input.onPinPressed(TouchPin.P1, function () {
+    if (device == 0) {
+        device = 1
+    } else {
+        device = 0
     }
 })
 input.onGesture(Gesture.ThreeG, function () {
@@ -133,11 +164,13 @@ input.onGesture(Gesture.ThreeG, function () {
         loop1 = 0
     }
 })
+let steer = 0
+let device = 0
 let loop1 = 0
 loop1 = 0
+device = 0
+steer = 90
 motor.motorStopAll()
 basic.forever(function () {
-    while (loop1 == 2) {
-        music.playMelody("B B B B - - - - ", 600)
-    }
+	
 })
