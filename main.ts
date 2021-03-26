@@ -87,6 +87,15 @@ input.onPinPressed(TouchPin.P1, function () {
         device = 0
     }
 })
+control.onEvent(EventBusSource.MES_DPAD_CONTROLLER_ID, EventBusValue.MICROBIT_EVT_ANY, function () {
+    if (control.eventValue() == 0) {
+    	
+    } else if (false) {
+    	
+    } else {
+    	
+    }
+})
 input.onGesture(Gesture.ThreeG, function () {
     motor.motorStop(motor.Motors.M1)
     for (let index = 0; index < 3; index++) {
