@@ -100,13 +100,13 @@ control.onEvent(EventBusSource.MES_DPAD_CONTROLLER_ID, EventBusValue.MICROBIT_EV
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_B_UP) {
         motor.motorStop(motor.Motors.M1)
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_C_DOWN) {
-    	
+        motor.servo(motor.Servos.S1, 0)
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_C_UP) {
-    	
+        motor.servo(motor.Servos.S1, 0)
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_A_DOWN) {
-    	
+        motor.servo(motor.Servos.S1, 0)
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_A_DOWN) {
-    	
+        motor.servo(motor.Servos.S1, 0)
     } else {
     	
     }
