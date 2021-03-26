@@ -99,14 +99,14 @@ control.onEvent(EventBusSource.MES_DPAD_CONTROLLER_ID, EventBusValue.MICROBIT_EV
         motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 255)
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_B_UP) {
         motor.motorStop(motor.Motors.M1)
-    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_C_DOWN) {
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_3_DOWN) {
         motor.servo(motor.Servos.S1, 0)
-    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_C_UP) {
-        motor.servo(motor.Servos.S1, 0)
-    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_A_DOWN) {
-        motor.servo(motor.Servos.S1, 0)
-    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_A_DOWN) {
-        motor.servo(motor.Servos.S1, 0)
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_3_UP) {
+        motor.servo(motor.Servos.S1, 90)
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_4_DOWN) {
+        motor.servo(motor.Servos.S1, 180)
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_4_UP) {
+        motor.servo(motor.Servos.S1, 90)
     } else {
     	
     }
