@@ -1,3 +1,6 @@
+bluetooth.onBluetoothDisconnected(function () {
+    motor.motorStopAll()
+})
 input.onButtonPressed(Button.A, function () {
     if (device == 0) {
         if (loop1 == 0) {
@@ -88,7 +91,7 @@ input.onPinPressed(TouchPin.P1, function () {
     }
 })
 control.onEvent(EventBusSource.MES_DPAD_CONTROLLER_ID, EventBusValue.MICROBIT_EVT_ANY, function () {
-    if (control.eventValue() == 0) {
+    if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_A_DOWN) {
     	
     } else if (false) {
     	
