@@ -1,5 +1,21 @@
+bluetooth.onBluetoothConnected(function () {
+    basic.showLeds(`
+        . . # # .
+        . . # . #
+        # # # # .
+        . . # . #
+        . . # # .
+        `)
+})
 bluetooth.onBluetoothDisconnected(function () {
     motor.motorStopAll()
+    basic.showLeds(`
+        . . . # #
+        . . # # #
+        . # # # .
+        # # # . .
+        # # . . .
+        `)
 })
 input.onButtonPressed(Button.A, function () {
     if (device == 0) {
