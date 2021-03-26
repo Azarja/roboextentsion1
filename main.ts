@@ -92,8 +92,20 @@ input.onPinPressed(TouchPin.P1, function () {
 })
 control.onEvent(EventBusSource.MES_DPAD_CONTROLLER_ID, EventBusValue.MICROBIT_EVT_ANY, function () {
     if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_A_DOWN) {
+        motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 255)
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_A_UP) {
+        motor.motorStop(motor.Motors.M1)
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_B_DOWN) {
+        motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 255)
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_B_UP) {
+        motor.motorStop(motor.Motors.M1)
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_C_DOWN) {
     	
-    } else if (false) {
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_C_UP) {
+    	
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_A_DOWN) {
+    	
+    } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_A_DOWN) {
     	
     } else {
     	
