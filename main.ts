@@ -20,47 +20,6 @@ bluetooth.onBluetoothDisconnected(function () {
 input.onButtonPressed(Button.A, function () {
     if (device == 0) {
         if (loop1 == 0) {
-            motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 255)
-            basic.showLeds(`
-                . . # # #
-                . # # # .
-                # # # . .
-                . # # # .
-                . . # # #
-                `)
-            loop1 = 1
-        } else if (loop1 == 2) {
-            motor.motorStop(motor.Motors.M1)
-            basic.pause(500)
-            motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 255)
-            basic.showLeds(`
-                . . # # #
-                . # # # .
-                # # # . .
-                . # # # .
-                . . # # #
-                `)
-            loop1 = 1
-        } else {
-            motor.motorStop(motor.Motors.M1)
-            basic.showIcon(IconNames.No)
-            loop1 = 0
-        }
-    } else {
-        steer += -10
-        motor.servo(motor.Servos.S1, steer)
-        basic.showLeds(`
-            . . # . .
-            . # . . .
-            # . . . .
-            . # . . .
-            . . # . .
-            `)
-    }
-})
-input.onButtonPressed(Button.B, function () {
-    if (device == 0) {
-        if (loop1 == 0) {
             motor.MotorRun(motor.Motors.M1, motor.Dir.CCW, 255)
             basic.showLeds(`
                 # # # . .
@@ -99,6 +58,47 @@ input.onButtonPressed(Button.B, function () {
             `)
     }
 })
+input.onButtonPressed(Button.B, function () {
+    if (device == 0) {
+        if (loop1 == 0) {
+            motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 255)
+            basic.showLeds(`
+                . . # # #
+                . # # # .
+                # # # . .
+                . # # # .
+                . . # # #
+                `)
+            loop1 = 1
+        } else if (loop1 == 2) {
+            motor.motorStop(motor.Motors.M1)
+            basic.pause(500)
+            motor.MotorRun(motor.Motors.M1, motor.Dir.CW, 255)
+            basic.showLeds(`
+                . . # # #
+                . # # # .
+                # # # . .
+                . # # # .
+                . . # # #
+                `)
+            loop1 = 1
+        } else {
+            motor.motorStop(motor.Motors.M1)
+            basic.showIcon(IconNames.No)
+            loop1 = 0
+        }
+    } else {
+        steer += -10
+        motor.servo(motor.Servos.S1, steer)
+        basic.showLeds(`
+            . . # . .
+            . # . . .
+            # . . . .
+            . # . . .
+            . . # . .
+            `)
+    }
+})
 input.onPinPressed(TouchPin.P1, function () {
     if (device == 0) {
         device = 1
@@ -116,11 +116,11 @@ control.onEvent(EventBusSource.MES_DPAD_CONTROLLER_ID, EventBusValue.MICROBIT_EV
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_B_UP) {
         motor.motorStop(motor.Motors.M1)
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_3_DOWN) {
-        motor.servo(motor.Servos.S1, 0)
+        motor.servo(motor.Servos.S1, 180)
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_3_UP) {
         motor.servo(motor.Servos.S1, 90)
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_4_DOWN) {
-        motor.servo(motor.Servos.S1, 180)
+        motor.servo(motor.Servos.S1, 0)
     } else if (control.eventValue() == EventBusValue.MES_DPAD_BUTTON_4_UP) {
         motor.servo(motor.Servos.S1, 90)
     } else {
